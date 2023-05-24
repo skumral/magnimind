@@ -8,21 +8,18 @@
 # In[20]:
 
 
+import math 
 def is_prime(number):
-    if number % 2 == 0:
+    if number < 2:
         return False
-    for x in range(number):
-        if number%(x+1) == 0 and number != 1: #x+1 because of 'divison by zero'
-            return True
-        else:
+    for x in range(2, int(math.sqrt(number)) + 1):
+        if number % x == 0:
             return False
-
-
+    return True
 user_input = int(input("Enter a number: "))
 print(is_prime(user_input))
     
-
-
+    
 # 2. Rømer temperature
 # 
 # You're writing an excruciatingly detailed alternate history novel set in a world where Daniel Gabriel Fahrenheit was never born.
